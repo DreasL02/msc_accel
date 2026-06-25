@@ -22,7 +22,7 @@ See Figure below for a high-level overview of the components in the development 
 
 - [msc_zynq_programming/](msc_zynq_programming/) - Scripts and ELF files used to program the Zynq target. Also present is the xsa file used for the Vitis project. Deployment machine.
 
-- [msc_vivado/](msc_vivado/) - Vivado project files for the APB example designs. Development machine.
+- [msc_vivado/](msc_vivado/) - Contains Tcl file for building Vivado block design for PS-GEM0 option with ILA.
 
 ## Links to most interesting files and folders
 
