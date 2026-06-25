@@ -9,7 +9,7 @@ See Figure below for a high-level overview of the components in the development 
 ![High-level overview of the development environment](Diagrams/devenv.svg)
 
 
-## Top-level layout
+## Top-level directory layout
 
 - [msc_uvm_accelerator/](msc_uvm_accelerator/) - UVM package and DPI bridge of the host side of the co-emulation. Built and expanded on elements of the [Amiq OFC UVM co-emulation framework](https://github.com/amiq-consulting/amiq_ofc). Host machine.
 
@@ -20,7 +20,7 @@ See Figure below for a high-level overview of the components in the development 
 
 - [msc_apb_example/](msc_apb_example/) - APB example designs and testbenches used as case studies for the accelerator flow. Host machine/Development machine.
 
-- [msc_zynq_programming/](msc_zynq_programming/) - Scripts and ELF files used to program the Zynq target. Deployment machine.
+- [msc_zynq_programming/](msc_zynq_programming/) - Scripts and ELF files used to program the Zynq target. Also present is the xsa file used for the Vitis project. Deployment machine.
 
 - [msc_vivado/](msc_vivado/) - Vivado project files for the APB example designs. Development machine.
 
@@ -30,9 +30,9 @@ See Figure below for a high-level overview of the components in the development 
 
 - [msc_uvm_accelerator/cpp/client.cpp](msc_uvm_accelerator/cpp/client.cpp) - C++ side of the DPI-C bridge that implements the network protocol and handles communication with the Zynq target.
 
-- [msc_vitis/apb_tcp/src/freertos_tcp_perf_server.c](msc_vitis/apb_tcp/src/freertos_tcp_perf_server.c) - FreeRTOS TCP server that runs on the Zynq target and handles requests from the host side of the co-emulation interface. Built on the example FreeRTOS TCP server provided by Xilinx in the Vitis installation. This can be found in [msc_vitis/echo_server/src/freertos_tcp_perf_server.c](msc_vitis/echo_server/src/freertos_tcp_perf_server.c).
+- [msc_vitis/apb_tcp/src/freertos_tcp_perf_server.c](msc_vitis/apb_tcp/src/freertos_tcp_perf_server.c) - FreeRTOS TCP server that runs on the Zynq target and handles requests and responses from the host side of the co-emulation interface using the DMA and various queues. Built on the example FreeRTOS TCP server provided by Xilinx in the Vitis installation. This can be found in [msc_vitis/echo_server/src/freertos_tcp_perf_server.c](msc_vitis/echo_server/src/freertos_tcp_perf_server.c).
 
-- [msc_vitis/apb_tcp/src/accel_dma.c](msc_vitis/apb_tcp/src/accel_dma.c) - Xilinx AXI DMA management code.
+- [msc_vitis/apb_tcp/src/accel_dma.c](msc_vitis/apb_tcp/src/accel_dma.c) - Custom Xilinx AXI DMA management code.
 
 - [msc_testbench/sv/](msc_testbench/rtl/) - Custom RTL components for the co-emulation setup. In subdirectory [/general_infrastructure](msc_testbench/sv/rtl/general_infrastructure) there is the common infrastructure. The remaining files are the APB case study RTL components.
 
