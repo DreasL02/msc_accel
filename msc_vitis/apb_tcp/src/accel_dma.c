@@ -447,7 +447,6 @@ void dma_write_traffic(void *p)
 void dma_read_traffic(void *p)
 {
 	const size_t frame_size = 23;
-	// only the first frame_size bytes of the DMA buffer are guaranteed to be valid data, so stop processing frames once we reach that offset
 	
 	dma_server_connection_t *conn = g_active_connection;
 	const size_t buf_capacity = sizeof(conn->dma_rx_buf);
